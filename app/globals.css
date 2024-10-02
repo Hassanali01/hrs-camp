@@ -2,26 +2,206 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Rubik", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #FFFBD6;
+  height: 100%;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+/* Custom Scrollbar for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+  border-radius: 10px; /* Optional: Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar thumb color */
+  border-radius: 10px; /* Rounded scrollbar thumb */
+  border: 2px solid #f1f1f1; /* Optional: border around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Thumb color when hovered */
+}
+
+/* Custom Scrollbar for Firefox */
+.bg-header-hrs {
+  background-color:#FFF8B8 ;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99999;
+}
+.navbar-brand img{
+  width: 40px;
+}
+.get-in-paragraph{
+  font-size: 20px;
+}
+.fix-height{
+margin-top: 70px;
+}
+
+
+.main-heading{
+font-size: 60px;
+font-weight: bold;
+}
+.location-cards{
+  background-color: #fff;
+  height: 100%;
+}
+.location-text{
+  padding: 20px;
+}
+
+ul{
+  padding-left: 0px;
+}
+.location-text li{
+  list-style: none;
+  font-size: 12px;
+}
+.location-text li a{
+  color: #2E3F53;
+  text-decoration: none;
+}
+.sub-heading{
+  font-size: 20px;
+  font-weight: bold;
+}
+.location-heading{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.contact-content h2{
+  font-size: 50px;
+  font-weight: bold;
+}
+.contact-content .get-in-paragraph{
+  font-size: 40px;
+}
+
+.social-icons li{
+  margin-right: 0px;
+  list-style: none;
+}
+.social-icons li img{
+  width: 50%;
+}
+
+/* footer-start */
+.footer-content h2{
+  font-size: 60px;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+.social-bg-f{
+background-color: #18783C;
+padding: 10px;
+border-radius: 10px;
+display: flex;
+align-items: center;
+}
+.footer-text {
+  background-color: #D9D9D9;
+  padding: 7px 20px;
+  border-radius: 5px;
+}
+.footer-text a{
+  color: #000;
+  text-decoration: none;
+}
+
+.section-h {
+  opacity: 1;
+  filter: none; /* Starting without blur */
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: filter 0.6s ease, opacity 0.6s ease;
+  padding: 40px 0px;
+}
+
+.section-adjust{
+overflow: auto;
+height: 100vh;
+padding: 20px 20px;
+
+
+}
+.section-adjust:hover {
+  scrollbar-width: thin; /* Firefox ke liye */
+}
+
+.section-adjust:hover::-webkit-scrollbar {
+  display: block; /* Chrome, Safari, Edge ke liye */
+  width: 8px; /* Aap isko apni preference ke hisaab se adjust kar sakte hain */
+}
+
+.section-adjust:hover::-webkit-scrollbar-thumb {
+  background-color: darkgray; /* Scrollbar ka color */
+  border-radius: 10px;
+}
+.section-adjust::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge ke liye */
+}
+.section-adjust {
+  overflow: auto; /* ya overflow-auto jo bhi ho */
+  scrollbar-width: none; /* Firefox ke liye */
+  height: 80vh;
+}
+
+.section-h-getintouch{
+  height: 100vh;
+}
+.img-heading{
+  width: 100%;
+}
+.w-85{
+width: 85%;
+}
+.section-one{
+  padding: 20px 0px;
+}
+.section-one,
+.section-two {
+  height: 100vh; /* Full viewport height */
+  scroll-snap-align: start; /* Ensures each section snaps to view */
+}
+@media (max-width:1024px){
+ 
+}
+
+@media (max-width:1440px) {
+  .fix-height {
+    margin-top: 110px;
+}
+.section-adjust {
+  height: 80vh;
+}
+.section-h-getintouch{
+  height: 100vh;
+}
+.get-in-paragraph {
+  font-size: 16px;
+}
+.main-heading {
+  font-size: 50px;
+  font-weight: bold;
+}
+.img-heading{
+  width: 85%;
+}
 }
