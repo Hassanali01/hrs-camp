@@ -1,17 +1,18 @@
 "use client";
 
-import { useState,useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faUser, faUsers,faInfoCircle, faTools, faBlog, faCogs,faUserTie, faHandshake, faQuestionCircle, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import hrsLogo from '@/app/assests/hrs-logo.png'
+import { faBars, faUser, faUsers, faInfoCircle, faTools, faBlog, faCogs, faUserTie, faEnvelope, faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
+import hrsLogo from '@/app/assests/hrs-logo.png';
+
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null); 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
-
 
   // Handle click outside the dropdown
   useEffect(() => {
@@ -21,38 +22,39 @@ const Navbar = () => {
       }
     };
 
-    // Add event listener to detect clicks outside
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
-      // Cleanup the event listener when component unmounts
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [dropdownRef]);
-  window.addEventListener('scroll', function () {
-    const sections = document.querySelectorAll('section');
-    const scrollPosition = window.scrollY;
-    
-    sections.forEach((section, index) => {
-      const sectionOffsetTop = section.offsetTop; // Section's top position relative to the document
-      
-      // Blur the section only if the user has scrolled past it
-      if (scrollPosition > sectionOffsetTop) {
-        // Calculate blur based on how much the user has scrolled past the section
-        let blurValue = Math.min(10, (scrollPosition - sectionOffsetTop) / 300); // Adjust 50 for sensitivity
-        section.style.filter = `blur(${blurValue}px)`;
+
+  // Scroll effect: Apply blur when user scrolls past a section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section');
+      const scrollPosition = window.scrollY;
+
+      sections.forEach((section) => {
+        const sectionOffsetTop = section.offsetTop;
         
-        // Optional: Adjust opacity based on blur
-        let opacityValue = 1 - (blurValue / 10); // Higher blur reduces opacity
-        section.style.opacity = opacityValue;
-      } else {
-        // Reset blur and opacity if the section is not scrolled past
-        section.style.filter = 'none';
-        section.style.opacity = 1;
-      }
-    });
-  });
-  
+        if (scrollPosition > sectionOffsetTop) {
+          let blurValue = Math.min(10, (scrollPosition - sectionOffsetTop) / 300);
+          section.style.filter = `blur(${blurValue}px)`;
+          section.style.opacity = 1 - (blurValue / 10);
+        } else {
+          section.style.filter = 'none';
+          section.style.opacity = 1;
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);  // Empty dependency array ensures this effect runs once on mount
+
   return (
     <>
     <header className="rounded-2xl fixed flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full top-10 bg-header-hrs ">
@@ -62,7 +64,7 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           <Link href="/">
-            <img src={hrsLogo.src} alt="HRSCamp" className="h-12 my-2 " />
+            <Image src={hrsLogo.src} alt="HRSCamp" className="h-12 my-2 " />
           </Link>
         </div>
     <div className="relative ">

@@ -65,12 +65,12 @@ const Contact = () => {
                 <Image className="img-heading" src={getInTouchImg} alt="Get in touch" />
                 <div className="get-in-paragraph">
                   <p>
-                    We're here to assist you in every step of your HR and recruitment journey. We have a global
+                    We&#39;re here to assist you in every step of your HR and recruitment journey. We have a global
                     presence with offices strategically located in key regions, ensuring accessibility to our services.
                     You can find our office addresses and contact details listed here for your convenience. For
                     inquiries, feedback, or partnership opportunities, our user-friendly contact form is at your
                     service. Just drop us a message, and our dedicated team will promptly respond to your needs. Stay
-                    updated with HRS Camp's latest updates and industry insights by following our social media profiles.
+                    updated with HRS Camp&#39;s latest updates and industry insights by following our social media profiles.
                     Connect with us on platforms like Facebook, Instagram, LinkedIn, and more to engage in meaningful
                     conversations and stay connected with the pulse of talent acquisition trends. Your feedback and
                     inquiries are essential to us, and we look forward to hearing from you.
@@ -111,7 +111,7 @@ const Contact = () => {
                 />
                 <div className="get-in-paragraph">
                   <p>
-                    Explore HRS Camp's network of strategically placed offices, offering global reach
+                    Explore HRS Camp&#39;s network of strategically placed offices, offering global reach
                     with a local touch. Our offices ensure accessibility to top-tier talent and
                     personalized recruitment solutions tailored to your region. Contact us to harness
                     the power of our global expertise.
