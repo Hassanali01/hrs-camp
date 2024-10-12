@@ -9,12 +9,12 @@ import './globals.css'
 
 export default function Home() {
   return (
-    <div >
+    <div style={{backgroundColor:"#FFFBD6"}}>
       <main >
     <Navbar/>
     <Contact/>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center" >
+      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center" style={{backgroundColor:"#FFFBD6"}} >
       <section className=" section-h-getintouch d-flex align-items-center justify-content-center flex-column mb-5">
       <div className="footer-content text-center">
         <h2>Like it? Share</h2>
