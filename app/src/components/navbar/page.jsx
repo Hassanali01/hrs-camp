@@ -56,7 +56,7 @@ const Navbar = () => {
     }
   }, []); 
   return (
-    <>
+    <div  style={{backgroundColor:"#FFFBD6"}}>
     <header className="rounded-2xl fixed flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full top-10 bg-header-hrs ">
       <nav
         className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8"
@@ -212,7 +212,7 @@ const Navbar = () => {
     </div>
     </nav>
     </header>
-    </>
+    </div>
   );
 };
 
