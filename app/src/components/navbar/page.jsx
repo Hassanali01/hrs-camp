@@ -64,7 +64,7 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           <Link href="/">
-            <Image src={hrsLogo.src} alt="HRSCamp" className="h-10 my-2 " />
+            <Image src={hrsLogo} alt="HRSCamp" height={40} width={40}/>
           </Link>
         </div>
     <div className="relative ">
