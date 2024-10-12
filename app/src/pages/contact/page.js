@@ -1,16 +1,26 @@
 'use client';
 import React,{useState} from 'react';
 import Image from 'next/image';
-import getInTouchImg from '@/app/assests/contactImg/get-in-touch.png'; // Adjust the path as per your file structure
+import getInTouchImg from '@/app/assests/contactImg/get-in-touch.png'; 
+// Adjust the path as per your file structure
 import '@/app/globals.css'
 import Head from 'next/head';
 import globleImg from '@/app/assests/contactImg/globle-img.png'
 import headOfficeImg from '@/app/assests/contactImg/head-office.png'
+import GlobalReachLEFTImg from '@/app/assests/contactImg/GlobalReachLEFTImg.png'
+import GlobalReachrightImg from '@/app/assests/contactImg/GlobalReachright.png'
+import SeamlessrigtImg from '@/app/assests/contactImg/Seamlessrigt.png'
+import SeamlessLeftImg from '@/app/assests/contactImg/SeamlessLeft.png'
+import StayConnectedleftImg from '@/app/assests/contactImg/StayConnectedleft.png'
+import StayConnectedrightImg from '@/app/assests/contactImg/StayConnectedright.png'
 import ukOffice from '@/app/assests/contactImg/uk-office.png'
 import twitterImg from '@/app/assests/contactImg/twitter.png'
 import linkdinImg from '@/app/assests/contactImg/linkdin.png'
 import letsTalkImg from '@/app/assests/contactImg/lets-talk.png'
 import facebookImg from '@/app/assests/contactImg/facebook.png'
+import getintouchleft from '@/app/assests/contactImg/Get in Touch LEFT.png'
+import email from '@/app/assests/email.png'
+
 const Contact = () => {
   const [step, setStep] = useState(0); // Initialize the step state
   const [formValues, setFormValues] = useState({
@@ -53,11 +63,12 @@ const Contact = () => {
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className="get-in-headings">
-                <h1 className="main-heading">
+                <h1 className="main-heading mb-5">
                   Get in <br />
                   Touch with <br />
                   HRS Camp!
                 </h1>
+                <Image className="img-heading w-50" src={getintouchleft} alt="Get in touch"/>
               </div>
             </div>
             <div className="col-lg-6">
@@ -65,12 +76,12 @@ const Contact = () => {
                 <Image className="img-heading" src={getInTouchImg} alt="Get in touch" />
                 <div className="get-in-paragraph">
                   <p>
-                    We&#39;re here to assist you in every step of your HR and recruitment journey. We have a global
+                    We&apos;re here to assist you in every step of your HR and recruitment journey. We have a global
                     presence with offices strategically located in key regions, ensuring accessibility to our services.
                     You can find our office addresses and contact details listed here for your convenience. For
                     inquiries, feedback, or partnership opportunities, our user-friendly contact form is at your
                     service. Just drop us a message, and our dedicated team will promptly respond to your needs. Stay
-                    updated with HRS Camp&#39;s latest updates and industry insights by following our social media profiles.
+                    updated with HRS Camp&apos;s latest updates and industry insights by following our social media profiles.
                     Connect with us on platforms like Facebook, Instagram, LinkedIn, and more to engage in meaningful
                     conversations and stay connected with the pulse of talent acquisition trends. Your feedback and
                     inquiries are essential to us, and we look forward to hearing from you.
@@ -93,25 +104,21 @@ const Contact = () => {
             <div className="row g-3 align-items-center">
               <div className="col-lg-6">
                 <div className="get-in-headings">
-                  <h1 className="main-heading">
+                  <h1 className="main-heading mb-5">
                     Our Global <br />
                     Reach, Your <br />
                     Local Connection
                   </h1>
+               
                 </div>
+                <Image className="img-heading w-50" src={GlobalReachLEFTImg} alt="Get in touch"/>
               </div>
               <div className="col-lg-6 section-adjust">
                 <div className='section-one'>
-                <Image
-                  className=" img-heading"
-                  src={globleImg}
-                  alt="Global Reach"
-                  width={600}
-                  height={400}
-                />
+                <Image className="img-heading mb-5" src={GlobalReachrightImg} alt="Get in touch"/>
                 <div className="get-in-paragraph">
                   <p>
-                    Explore HRS Camp&#39;s network of strategically placed offices, offering global reach
+                    Explore HRS Camp&apos;s network of strategically placed offices, offering global reach
                     with a local touch. Our offices ensure accessibility to top-tier talent and
                     personalized recruitment solutions tailored to your region. Contact us to harness
                     the power of our global expertise.
@@ -214,22 +221,18 @@ const Contact = () => {
           <div className="get-in-touch">
             <div className="row g-3 align-items-center">
               <div className="col-lg-6">
-                <div className="get-in-headings">
+                <div className="get-in-headings mb-5">
                   <h1 className="main-heading">
                     Seamless <br />
                     Communication,<br />
                     Swift Solutions
                   </h1>
                 </div>
+                <Image className="img-heading w-50" src={SeamlessLeftImg} alt="Get in touch"/>
               </div>
               <div className="col-lg-6">
-                <Image
-                  className="img-heading"
-                  src={getInTouchImg}
-                  alt="Get In Touch"
-                  width={600}
-                  height={400}
-                />
+              <div className="section-adjust-form">
+              <Image className="seamles-right-img mb-5" src={SeamlessrigtImg} alt="Get in touch"/>
                 <div className="get-in-paragraph">
                   <p>
                     Our user-friendly contact form ensures hassle-free communication. Send us your
@@ -238,14 +241,7 @@ const Contact = () => {
                     exchange of information.
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <div className="mx-3 h-[50rem] ">
+                <div className="mx-3 h-[50rem] ">
         <form className="pt-[25rem]">
           <div className="relative flex z-0 w-full mb-6 group">
             <div className="relative z-0 w-full mb-6 group">
@@ -283,6 +279,15 @@ const Contact = () => {
           </div>
         </form>
       </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+     
 
 
       <section className="section-h section-h-getintouch">
@@ -292,9 +297,11 @@ const Contact = () => {
           <div className="col-lg-6"></div>
           <div className="col-lg-6 d-flex justify-content-end">
             <div className="contact-content d-flex flex-column">
+            {/* <Image src={email} /> */}
               <h2>Contact US</h2>
               <p className="get-in-paragraph">hello@hrscamp.com</p>
             </div>
+
 
 
 
@@ -317,20 +324,15 @@ const Contact = () => {
             <div className="row g-3 align-items-center">
               <div className="col-lg-6">
                 <div className="get-in-headings">
-                  <h1 className="main-heading">
+                  <h1 className="main-heading mb-5">
                     Stay Connected, <br />
                     Stay Informed
                   </h1>
                 </div>
+                <Image className="img-heading w-75 mb-5" src={StayConnectedleftImg} alt="Get in touch"/>
               </div>
               <div className="col-lg-6">
-                <Image
-                  className="img-heading"
-                  src={getInTouchImg}
-                  alt="Stay Connected"
-                  width={600}
-                  height={400}
-                />
+              <Image className="img-heading mb-5 stay-right-img" src={StayConnectedrightImg} alt="Get in touch"/>
                 <div className="get-in-paragraph my-3">
                   <p>
                     Connect with HRS Camp on our dynamic social media pages. Follow us on Facebook, Instagram,

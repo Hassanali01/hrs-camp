@@ -141,28 +141,32 @@ padding: 20px 20px;
 
 
 }
-.section-adjust:hover {
-  scrollbar-width: thin; /* Firefox ke liye */
-}
+ /* .section-adjust:hover {
+  scrollbar-width: thin;
+} */
 
-.section-adjust:hover::-webkit-scrollbar {
-  display: block; /* Chrome, Safari, Edge ke liye */
-  width: 8px; /* Aap isko apni preference ke hisaab se adjust kar sakte hain */
-}
+/* .section-adjust:hover::-webkit-scrollbar {
+  display: block; 
+  width: 8px; 
+} 
 
-.section-adjust:hover::-webkit-scrollbar-thumb {
-  background-color: darkgray; /* Scrollbar ka color */
+ .section-adjust:hover::-webkit-scrollbar-thumb {
+  background-color: darkgray; 
   border-radius: 10px;
 }
 .section-adjust::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge ke liye */
-}
+  display: none; 
+}  */
 .section-adjust {
-  overflow: auto; /* ya overflow-auto jo bhi ho */
-  scrollbar-width: none; /* Firefox ke liye */
+  overflow: auto; 
   height: 80vh;
+  scrollbar-width: none;  
 }
-
+.section-adjust-form{
+  overflow: auto; 
+  height: 100vh;
+  scrollbar-width: none;  
+}
 .section-h-getintouch{
   height: 100vh;
 }
@@ -178,13 +182,13 @@ width: 85%;
 .section-one,
 .section-two {
   height: 100vh; /* Full viewport height */
-  scroll-snap-align: start; /* Ensures each section snaps to view */
+ 
 }
 @media (max-width:1024px){
  
 }
 
-@media (max-width:1440px) {
+@media (max-width:1500px) {
   .fix-height {
     margin-top: 110px;
 }
@@ -204,4 +208,20 @@ width: 85%;
 .img-heading{
   width: 85%;
 }
+.seamles-right-img{
+  width: 70%;
+  display: flex;
+ justify-self: center;
+}
+.stay-right-img{
+  width: 55% !important;
+}
+}
+.stay-right-img{
+  width: 75%;
+}
+.toogle-icons{
+  width: 80px;
+  height: 2.3rem !important;
+
 }

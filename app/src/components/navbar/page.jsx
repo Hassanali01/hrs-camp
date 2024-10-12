@@ -1,15 +1,16 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState,useEffect,useRef } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faUser, faUsers, faInfoCircle, faTools, faBlog, faCogs, faUserTie, faEnvelope, faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faUser, faUsers,faInfoCircle, faTools, faBlog, faCogs,faUserTie, faHandshake, faQuestionCircle, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import hrsLogo from '@/app/assests/hrs-logo.png'
 import Image from "next/image";
-import hrsLogo from '@/app/assests/hrs-logo.png';
-
+// import '@/app/globals.css'
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null); 
+  const dropdownRef = useRef(null);
+
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
@@ -22,39 +23,38 @@ const Navbar = () => {
       }
     };
 
+    // Add event listener to detect clicks outside
     document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
+      // Cleanup the event listener when component unmounts
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [dropdownRef]);
 
-  // Scroll effect: Apply blur when user scrolls past a section
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('section');
-      const scrollPosition = window.scrollY;
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", function () {
+        const sections = document.querySelectorAll("section");
+        const scrollPosition = window.scrollY;
 
-      sections.forEach((section) => {
-        const sectionOffsetTop = section.offsetTop;
-        
-        if (scrollPosition > sectionOffsetTop) {
-          let blurValue = Math.min(10, (scrollPosition - sectionOffsetTop) / 300);
-          section.style.filter = `blur(${blurValue}px)`;
-          section.style.opacity = 1 - (blurValue / 10);
-        } else {
-          section.style.filter = 'none';
-          section.style.opacity = 1;
-        }
+        sections.forEach((section) => {
+          const sectionOffsetTop = section.offsetTop;
+
+          if (scrollPosition > sectionOffsetTop) {
+            let blurValue = Math.min(10, (scrollPosition - sectionOffsetTop) / 300);
+            section.style.filter = `blur(${blurValue}px)`;
+
+            let opacityValue = 1 - blurValue / 10;
+            section.style.opacity = opacityValue;
+          } else {
+            section.style.filter = "none";
+            section.style.opacity = 1;
+          }
+        });
       });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);  // Empty dependency array ensures this effect runs once on mount
-
+    }
+  }, []); 
   return (
     <>
     <header className="rounded-2xl fixed flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full top-10 bg-header-hrs ">
@@ -64,15 +64,15 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           <Link href="/">
-            <Image src={hrsLogo.src} alt="HRSCamp" className="h-12 my-2 " />
+            <Image src={hrsLogo.src} alt="HRSCamp" className="h-10 my-2 " />
           </Link>
         </div>
     <div className="relative ">
       <button
         onClick={toggleDropdown}
-        className="p-1 border border-grey rounded-md bg-slate-200 hover:bg-slate-300 hover:opacity-70 transition-all duration-300"
+        className="p-1  rounded-md   hover:opacity-70 transition-all duration-300"
       >
-        <FontAwesomeIcon icon={faBars} className="w-7 h-5" />
+        <FontAwesomeIcon icon={faBars} className="w-7 h-7 toogle-icons" />
        
     
       </button>
