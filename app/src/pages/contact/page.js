@@ -56,7 +56,7 @@ const Contact = () => {
   };
 
   return (
-    <main>
+    <main style={{backgroundColor:"#FFFBD6"}}>
         <section className="section-h section-h-getintouch fix-height" >
       <div className="container">
         <div className="get-in-touch">
